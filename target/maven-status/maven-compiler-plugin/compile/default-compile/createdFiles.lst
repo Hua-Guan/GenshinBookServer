@@ -1,10 +1,15 @@
+dao\daoImpl\RoleInformationDaoImpl.class
+dao\RoleInformationDao.class
 Test\Test.class
 service\serviceImpl\OverViewServiceImpl.class
 pojo\OverView.class
+service\serviceImpl\RoleInformationServiceImpl.class
 service\OverViewService.class
 pojo\RoleName.class
 dao\OverViewDao.class
 service\RoleNameService.class
+service\RoleInformationService.class
+pojo\RoleInformation.class
 dao\daoImpl\OverViewDaoImpl.class
 controller\OverViewController.class
 dao\RoleNameDao.class

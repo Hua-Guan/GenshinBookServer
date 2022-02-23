@@ -9,7 +9,7 @@
         <unpackNestedArchives>false</unpackNestedArchives>
       </options>
     </properties>
-    <root id="archive" name="Book-1.0.war">
+    <root id="archive" name="Book-1.1.war">
       <element id="artifact" artifact-name="GenshinBookServer:war exploded" />
     </root>
   </artifact>

@@ -15,4 +15,10 @@ public class RoleNameDaoImpl implements RoleNameDao {
         String sql = "select * from role";
         return jdbcTemplate.query(sql,new BeanPropertyRowMapper<RoleName>(RoleName.class));
     }
+
+    @Override
+    public RoleName queryUriByName(String name) {
+        String sql = "select * from role where RoleName = ?";
+        return  jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<RoleName>(RoleName.class),name);
+    }
 }
