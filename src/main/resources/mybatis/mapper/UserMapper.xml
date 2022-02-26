@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="genshinbook.dao.UserDao">
+<!--    public Boolean updatePassword(String e_mail);-->
+    <update id="updatePassword" useGeneratedKeys="true" keyProperty="id" keyColumn="id" parameterType="genshinbook.bean.User">
+        update user set password = #{password} where e_mail = #{e_mail}
+    </update>
+    <!--    public User login(User user);-->
+    <select id="login" resultType="genshinbook.bean.User">
+        select * from user where e_mail = #{e_mail} and password = #{password}
+    </select>
+<!--     public void register(User user);-->
+    <insert id="register" useGeneratedKeys="true" keyProperty="id"  keyColumn="id" parameterType="genshinbook.bean.User">
+        insert into user(e_mail,password) values(#{e_mail},#{password})
+    </insert>
+<!--    public String getPassword(String e_mail);-->
+    <select id="getPassword" parameterType="java.lang.String" resultType="String">
+        select password from user where e_mail = #{e_mail}
+    </select>
+</mapper>

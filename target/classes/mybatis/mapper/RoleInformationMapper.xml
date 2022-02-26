@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="genshinbook.dao.RoleInformationDao">
+    <resultMap id="queryByName" type="genshinbook.bean.RoleInformation">
+        <id column="RoleName" property="RoleName" />
+        <result column="Affiliation" property="Affiliation"/>
+        <result column="Vision" property="Vision"/>
+        <result column="WeaponType" property="WeaponType"/>
+        <result column="Constellation" property="Constellation"/>
+        <result column="Birthday" property="Birthday"/>
+        <result column="Title" property="Title"/>
+        <result column="Introduction" property="Introduction"/>
+        <association property="RoleUri" column="RoleName"
+                     select="genshinbook.dao.RoleNameDao.queryUriByName"/>
+    </resultMap>
+    <!--    public RoleInformation queryRoleByName(String name);-->
+    <select id="queryRoleByName" resultMap="queryByName">
+        select * from roleinformation where RoleName = #{name}
+    </select>
+</mapper>

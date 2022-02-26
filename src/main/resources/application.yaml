@@ -1,0 +1,33 @@
+server:
+  servlet:
+    context-path: /GenshinBook
+spring:
+  redis:
+    password: M6CP7Xq59H*Y(hS7
+    host: 45.77.1.79
+    port: 7913
+  datasource:
+    url: jdbc:mysql://45.77.1.79:3306/genshinbook?characterEncoding=UTF-8&serverTimezone=UTC
+    username: genshin-user
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mail:
+    host: smtp.qq.com
+    username: genshin_book@qq.com
+    password: zimbmjbqtknqgajh
+    default-encoding: UTF-8
+    protocol: smtp
+    port: 465
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml  #全局配置文件位置
+  mapper-locations: classpath:mybatis/mapper/*.xml  #sql映射文件位置

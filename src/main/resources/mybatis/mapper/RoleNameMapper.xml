@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="genshinbook.dao.RoleNameDao">
+<!--    public List<RoleName> queryAll();;-->
+    <select id="queryAll" resultType="genshinbook.bean.RoleName">
+        select * from role
+    </select>
+<!--    public RoleName queryUriByName(String name);-->
+    <select id="queryUriByName" parameterType="java.lang.String" resultType="String">
+        select RoleUri from role where RoleName = #{roleName}
+    </select>
+</mapper>
